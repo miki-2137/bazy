@@ -1,1 +1,3 @@
 Hello World!
+
+nowa linijka z fix_001
