@@ -1,3 +1,4 @@
 Hello World!
 
-nowa linijka z fix_001
+
+mod w branchu dev
