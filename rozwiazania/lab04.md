@@ -92,29 +92,29 @@ max_ladownosc INT UNSIGNED);
 ```
 * 3
 ```sql
-
+INSERT INTO statek (nazwa_statku,rodzaj_statku,data_wodowania,max_ladownosc) VALUES ('Odyn','knarr','1020-05-23','21'),('Loki','drakkar','1020-06-27','20');
 ```
 * 4
 ```sql
-
+ALTER TABLE postac ADD funkcja VARCHAR(30);
 ```
 * 5
 ```sql
-
+UPDATE postac SET funkcja='kapitan' WHERE nazwa='Bjorn';
 ```
 * 6
 ```sql
-
+ALTER TABLE postac ADD nazwa_statku VARCHAR(30), ADD FOREIGN KEY (nazwa_statku) REFERENCES statek(nazwa_statku);
 ```
 * 7
 ```sql
-
+UPDATE postac SET nazwa_statku='Odyn' WHERE rodzaj='wiking' OR rodzaj='ptak';
 ```
 * 8
 ```sql
-
+DELETE FROM izba WHERE nazwa_izby='spizarnia';
 ```
 * 9
 ```sql
-
+DROP TABLE izba;
 ```
