@@ -1,7 +1,7 @@
 **Zadanie 1**
 * 1
 ```sql
-CREATE TABLE postac (
+CREATE TABLE postac(
 id_postaci INT PRIMARY KEY AUTO_INCREMENT,
 nazwa VARCHAR(40),
 rodzaj ENUM('wiking','ptak','kobieta'),
@@ -10,7 +10,7 @@ wiek INT UNSIGNED);
 ```
 * 2
 ```sql
-INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES 
+INSERT INTO postac(nazwa,rodzaj,data_ur,wiek) VALUES 
 ('Bjorn','wiking','1000-11-11','27'),
 ('Drozd','ptak','1025-06-27','2'),
 ('Tesciowa','kobieta','950-01-01','77');
@@ -22,7 +22,7 @@ UPDATE postac SET wiek='88' WHERE nazwa='tesciowa';
 **Zadanie 2**
 * 1
 ```sql
-CREATE TABLE walizka (
+CREATE TABLE walizka(
 id_walizki INT PRIMARY KEY AUTO_INCREMENT,
 pojemnosc INT UNSIGNED,
 kolor ENUM('rozowy','czerwony','teczowy','zolty'),
@@ -42,7 +42,7 @@ INSERT INTO walizka (pojemnosc,kolor,id_wlasciciela) VALUES
 **Zadanie 3**
 * 1
 ```sql
-CREATE TABLE izba (
+CREATE TABLE izba(
 adres_budynku VARCHAR(50),
 nazwa_izby VARCHAR(50),
 metraz INT UNSIGNED,
@@ -62,7 +62,7 @@ INSERT INTO izba (adres_budynku,nazwa_izby,metraz,kolor_izby,wlasciciel) VALUES 
 **Zadanie 4**
 * 1
 ```sql
-CREATE TABLE przetwory (
+CREATE TABLE przetwory(
 id_przetworu INT PRIMARY KEY AUTO_INCREMENT,
 rok_produkcji INT(4) DEFAULT '1654',
 id_wykonawcy INT,
