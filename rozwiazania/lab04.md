@@ -1,4 +1,4 @@
-**Zadanie 1**
+## Zadanie 1
 * 1
 ```sql
 CREATE TABLE postac(
@@ -19,7 +19,7 @@ INSERT INTO postac(nazwa,rodzaj,data_ur,wiek) VALUES
 ```sql
 UPDATE postac SET wiek='88' WHERE nazwa='tesciowa';
 ```
-**Zadanie 2**
+## Zadanie 2
 * 1
 ```sql
 CREATE TABLE walizka(
@@ -39,7 +39,7 @@ INSERT INTO walizka (pojemnosc,kolor,id_wlasciciela) VALUES
 ('20','czerwony','1'),('50','rozowy','3');
 ```
 
-**Zadanie 3**
+## Zadanie 3
 * 1
 ```sql
 CREATE TABLE izba(
@@ -59,7 +59,7 @@ ALTER TABLE izba ADD kolor_izby VARCHAR(15) DEFAULT 'czarny' AFTER metraz;
 INSERT INTO izba (adres_budynku,nazwa_izby,metraz,kolor_izby,wlasciciel) VALUES ('Krzywa 5','Spizarnia','10','bialy',1);
 ```
 
-**Zadanie 4**
+## Zadanie 4
 * 1
 ```sql
 CREATE TABLE przetwory(
@@ -77,7 +77,7 @@ FOREIGN KEY(id_konsumenta) REFERENCES postac(id_postaci));
 INSERT INTO przetwory (rok_produkcji,id_wykonawcy,zawartosc,dodatek,id_konsumenta) VALUES (default,3,'bigos',default,1);
 ```
 
-**Zadanie 5**
+## Zadanie 5
 * 1
 ```sql
 INSERT INTO postac (nazwa,rodzaj,data_ur,wiek) VALUES ('Floki','wiking','1001-01-01',26),('Ragnar','wiking','1002-02-02',25),('Harald','wiking','1003-03-03',24),('Torvi','wiking','1004-04-04',23),('Jorund','wiking','1005-05-05',22);
