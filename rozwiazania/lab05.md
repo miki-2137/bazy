@@ -54,7 +54,7 @@ INSERT INTO marynarz SELECT * FROM postac WHERE nazwa_statku IS NOT NULL;
 ```
 * c
 ```sql
-
+ALTER TABLE marynarz ADD FOREIGN KEY(nazwa_statku) REFERENCES statek(nazwa_statku)
 ```
 
 ## Zadanie 5
