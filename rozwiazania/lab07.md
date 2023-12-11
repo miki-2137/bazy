@@ -35,7 +35,7 @@ SELECT kreatura.nazwa,SUM(ekwipunek.ilosc) FROM kreatura INNER JOIN ekwipunek ON
 ```
 * 2
 ```sql
-SELECT kreatura.nazwa, zasob.nazwa FROM kreatura INNER JOIN ekwipunek ON ekwipunek.idKreatury=kreatura.idKreatury LEFT JOIN zasob ON zasob.idZasobu=ekwipunek.idZasobu;
+SELECT kreatura.nazwa, zasob.nazwa FROM kreatura INNER JOIN ekwipunek ON ekwipunek.idKreatury=kreatura.idKreatury INNER JOIN zasob ON zasob.idZasobu=ekwipunek.idZasobu ORDER BY kreatura.nazwa;
 ```
 * 3
 ```sql
@@ -50,19 +50,21 @@ SELECT kreatura.nazwa,kreatura.dataUr,zasob.nazwa FROM kreatura NATURAL JOIN ekw
 ```
 * 2
 ```sql
-
+SELECT k.nazwa,dataUr,z.nazwa FROM kreatura k JOIN ekwipunek e ON e.idKreatury=k.idKreatury JOIN zasob z ON e.idZasobu=z.idZasobu WHERE z.rodzaj='jedzenie' ORDER BY dataUr ASC LIMIT 5;
 ```
 * 3
 ```sql
-
+SELECT CONCAT(k1.nazwa,' - ',k2.nazwa) FROM kreatura k1,kreatura k2 WHERE k2.idKreatury-k1.idKreatury=5;
 ```
 
 ## Zadanie 5
 * 1
 ```sql
-
+SELECT k.rodzaj,AVG(e.ilosc*z.waga) FROM kreatura k JOIN ekwipunek e ON e.idKreatury=k.idKreatury JOIN zasob z ON z.idZasobu=e.idZasobu WHERE k.rodzaj NOT IN('malpa','waz') GROUP BY k.rodzaj HAVING SUM(e.ilosc)<30;
 ```
 * 2
 ```sql
+SELECT k.nazwa,k.rodzaj,k.dataUr FROM kreatura k, (SELECT min(dataUr) min, max(dataUr) max FROM kreatura GROUP BY rodzaj) b WHERE b.min=k.dataUr OR b.max=k.dataUr;
 
+SELECT 'nalmlodsza',a.maxData,b.nazwa,a.rodzaj FROM (SELECT max(dataUr) maxData, rodzaj FROM kreatura GROUP BY rodzaj) a, (SELECT nazwa,dataUr FROM kreatura) b WHERE a.maxData=b.dataUr UNION SELECT 'najstarsza',a.minData,b.nazwa,a.rodzaj FROM (SELECT min(dataUr) minData, rodzaj FROM kreatura GROUP BY rodzaj) a, (SELECT nazwa,dataUr FROM kreatura) b WHERE a.minData=b.dataUr;
 ```
