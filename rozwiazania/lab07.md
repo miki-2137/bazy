@@ -39,7 +39,7 @@ SELECT kreatura.nazwa, zasob.nazwa FROM kreatura INNER JOIN ekwipunek ON ekwipun
 ```
 * 3
 ```sql
-SELECT kreatura.nazwa,ekwipunek.idZasobu FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury=ekwipunek.idKreatury HAVING ekwipunek.idZasobu IS NULL;
+SELECT kreatura.nazwa,ekwipunek.idZasobu FROM kreatura LEFT JOIN ekwipunek ON kreatura.idKreatury=ekwipunek.idKreatury WHERE ekwipunek.idZasobu IS NULL;
 ```
 
 ## Zadanie 4
