@@ -1,7 +1,11 @@
 ## Zadanie 1
 * 1
 ```sql
-
+CREATE TABLE kreatura2 AS SELECT*FROM wikingowie.kreatura;
+CREATE TABLE uczestnicy AS SELECT*FROM wikingowie.uczestnicy;
+CREATE TABLE etapy_wyprawy AS SELECT*FROM wikingowie.etapy_wyprawy;
+CREATE TABLE sektor AS SELECT*FROM wikingowie.sektor;
+CREATE TABLE wyprawa AS SELECT*FROM wikingowie.wyprawa;
 ```
 * 2
 ```sql
